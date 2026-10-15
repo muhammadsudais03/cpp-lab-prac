@@ -226,12 +226,50 @@
 //     return 0;
 // }
 
+// #include <iostream>
+// using namespace std;
+
+// int main(){
+//     /*
+// VARIABLE: A variable is a named storage location used to store data.
+// cin is used to take input from the user.
+// cout is used to display output on the screen.
+// */
+//     string name;   
+//     string department;   
+//     int age;
+//     float gpa;
+
+//     cout<<"Enter Name:";     //COUT: It is used to display output on the screen.//
+//     cin>>name;              //CIN: It is used to take input from the user.//
+//     cout<<"Enter Age:";
+//     cin>>age;
+//     cout<<"Enter GPA:";
+//     cin>>gpa;
+//     cout<<"Enter Departemnt:";
+//     cin>>department;
+
+//     cout<<"Student:"<<name<<endl;
+//     cout<<"AGE:"<<age<<endl;
+//     cout<<"GPA:"<<gpa<<endl;
+//     cout<<"Departemnt:"<<department<<endl;
+//     cout<<"Birth Year:"<<2026-age<<endl;
+//     return 0;
+// }
+
 #include <iostream>
 using namespace std;
 
 int main(){
-    cout<<"**********************"<<endl;
-    cout<<"Hello World"<<endl;
-    cout<<"*********************"<<endl;
+    char grade;
+    double fee;
+
+    cout<<"Enter the grade:";
+    cin>>grade;
+    cout<<"Enter the fee:";
+    cin>>fee;
+
+    cout<<"Fee is:"<<fee<<endl;
+    cout<<"Grade is:"<<grade<<endl;
     return 0;
 }
