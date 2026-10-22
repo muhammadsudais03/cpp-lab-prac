@@ -226,50 +226,120 @@
 //     return 0;
 // }
 
+
 // #include <iostream>
 // using namespace std;
 
 // int main(){
-//     /*
-// VARIABLE: A variable is a named storage location used to store data.
-// cin is used to take input from the user.
-// cout is used to display output on the screen.
-// */
+
 //     string name;   
 //     string department;   
 //     int age;
 //     float gpa;
 
-//     cout<<"Enter Name:";     //COUT: It is used to display output on the screen.//
-//     cin>>name;              //CIN: It is used to take input from the user.//
-//     cout<<"Enter Age:";
+//     cout<<"Enter Your Name:";                
+//     cin>>name;                          
+//     cout<<"Enter Your Age:";
 //     cin>>age;
-//     cout<<"Enter GPA:";
+//     cout<<"Enter Your GPA:";
 //     cin>>gpa;
 //     cout<<"Enter Departemnt:";
 //     cin>>department;
 
-//     cout<<"Student:"<<name<<endl;
-//     cout<<"AGE:"<<age<<endl;
-//     cout<<"GPA:"<<gpa<<endl;
-//     cout<<"Departemnt:"<<department<<endl;
-//     cout<<"Birth Year:"<<2026-age<<endl;
+//     cout<<"Student Name is:"<<name<<endl;
+//     cout<<"Student AGE is:"<<age<<endl;
+//     cout<<"Student GPA: is"<<gpa<<endl;
+//     cout<<"Student Departemnt is:"<<department<<endl;
+//     cout<<"Student Birth Year is:"<<2026-age<<endl;
+//     return 0;
+// }
+
+
+
+
+
+
+
+
+// #include <iostream>
+// using namespace std;
+
+// int main(){
+//     char grade;
+//     double fee;
+
+//     cout<<"Enter Your grade:";
+//     cin>>grade;
+//     cout<<"Enter Your fee:";
+//     cin>>fee;
+
+//     cout<<"Student Fee is:"<<fee<<endl;
+//     cout<<"Student Grade is:"<<grade<<endl;
+//     return 0;
+// }
+
+// #include <iostream>
+// using namespace std;
+
+// int main(){
+
+//     int marks;
+//     cout<<"Enter the marks:";
+//     cin>>marks;
+//     if (marks>=50){
+//         cout<<"Pass"<<endl;
+//     }else{
+//         cout<<"fail"<<endl;
+//     };
+//     return 0;
+// }
+
+// #include <iostream>
+// using namespace std;
+
+// int main(){
+
+//     int num;
+//     cout<<"Enter the num:";
+//     cin>>num;
+//     if (num%2==0){
+//         cout<<"Even"<<endl;
+//     }else{
+//         cout<<"Odd"<<endl;
+//     };
+//     return 0;
+// }
+
+
+// #include <iostream>
+// using namespace std;
+
+// int main(){
+
+//     int num1;
+//     cout<<"Enter the num1:";
+//     cin>>num1;
+//     int num2;
+//     cout<<"Enter the num2:";
+//     cin>>num2;
+//     if (num1>num2){
+//         cout<<num1," is Greater than ",num2;
+//     }else{
+//         cout<<num2," is Greater than ",num1;
+//     };
 //     return 0;
 // }
 
 #include <iostream>
 using namespace std;
 
-int main(){
-    char grade;
-    double fee;
+int main() {
+    for (int i = 1; i <= 5; i++) {
+        for (int j = 1; j <= i; j++) {
+            cout << "*";
+        }
+        cout << endl;
+    }
 
-    cout<<"Enter the grade:";
-    cin>>grade;
-    cout<<"Enter the fee:";
-    cin>>fee;
-
-    cout<<"Fee is:"<<fee<<endl;
-    cout<<"Grade is:"<<grade<<endl;
     return 0;
 }
