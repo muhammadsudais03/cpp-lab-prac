@@ -1,114 +1,234 @@
-# import os
-# import shutil
+# from multiprocessing import Process
+# from multiprocessing import Pipe
 
-# source = "source"
-# backup = "Backup"
+# def child(conn):
+#     conn.send("Hello Parent")
+#     print("Child received:", conn.recv())
+#     conn.close()
 
-# os.makedirs(backup, exist_ok=True)
+# def parent(conn):
+#     print("Parent received:", conn.recv())
+#     conn.send("Hello from parent!")
+#     print("Parent sent: Hello from parent!")
 
-# for file in os.listdir(source):
-#     path = os.path.join(source, file)
+# if __name__ == "__main__":
+#     p_conn, c_conn = Pipe()
 
-#     if os.path.isfile(path):
-#         shutil.copy(path, backup)
+#     p = Process(target=child, args=(c_conn,))
+#     p.start()
 
-# print("Mudassir,25214")
-# print("Backup created successfully")
+#     parent(p_conn)
+#     p.join()
 
-# import os
-# import shutil
-# import subprocess
+# from multiprocessing import Process 
+# from multiprocessing import Queue
 
-# while True:
+# def child(q, msg):
+#     q.put(msg)
+# def parent(q):
+#     msg1 = q.get()
+#     msg2 = q.get()
+#     msg3 = q.get()
 
-#     command = input("MyShell> ").strip()
 
-#     if command == "":
-#         continue
+#     print("Parent recived:", msg1)
 
-#     if command == "exit":
-#         print("Shell closed.")
-#         break
+#     print("Parent received:", msg2)
+#     print("Parent receved:", msg3)
 
-#     elif command == "pwd":
-#         print(os.getcwd())
 
-#     elif command == "dir" or command == "ls":
-#         print(os.listdir())
+# if __name__ == "__main__":
+#     q = Queue()
 
-#     elif command.startswith("cd "):
-#         path = command[3:]
+#     p1 = Process(target=child, args=(q, "Msg 1"))
+#     p2 = Process(target=child, args=(q, "Msge 2"))
+#     p3 = Process(target=child, args=(q, "Msg 3"))
 
-#         try:
-#             os.chdir(path)
-#             print("Current Directory:", os.getcwd())
-#         except FileNotFoundError:
-#             print("Error: Directory not found.")
-#         except NotADirectoryError:
-#             print("Error: This is not a directory.")
 
-#     elif command.startswith("mkdir "):
-#         folder = command[6:]
 
-#         try:
-#             os.mkdir(folder)
-#             print("Folder created:", folder)
-#         except FileExistsError:
-#             print("Error: Folder already exists.")
+#     p1.start()
+#     p2.start()
+#     p3.start()
 
-#     elif command.startswith("rmdir "):
-#         folder = command[6:]
+#     parent(q)
+#     p1.join()
+#     p2.join()
+#     p3.join()
 
-#         try:
-#             os.rmdir(folder)
-#             print("Folder removed:", folder)
-#         except FileNotFoundError:
-#             print("Error: Folder not found.")
-#         except OSError:
-#             print("Error: Folder is not empty.")
+# from multiprocessing import Process
+# from multiprocessing import Queue
 
-#     elif command.startswith("touch "):
-#         filename = command[6:]
 
-#         with open(filename, "w"):
-#             pass
+# def producer(q):
+#     items = ["itm 1", "itm 2", "itm 3", "itm 4", "itm 5"]
 
-#         print("File created:", filename)
+#     for i in items:
+#         q.put(i)
 
-#     elif command.startswith("del "):
-#         filename = command[4:]
+#     q.put("stop")
 
-#         try:
-#             os.remove(filename)
-#             print("File deleted:", filename)
-#         except FileNotFoundError:
-#             print("Error: File not found.")
 
-#     elif command.startswith("cat "):
-#         filename = command[4:]
 
-#         try:
-#             with open(filename, "r") as file:
-#                 print(file.read())
-#         except FileNotFoundError:
-#             print("Error: File not found.")
+# def consumer(q):
+#     while True:
+#         msg = q.get()
 
-#     elif command == "clear":
-#         os.system("cls")
+#         if msg == "stop":
+#             break
 
-#     else:
-#         print("Error: Invalid shell command.")
+#         print("Consumr recived:", msg)
 
-# filename = "test.txt"
+# if __name__ == "__main__":
+#     q = Queue()
 
-# with open(filename, "w") as file:
-#     pass
+#     p1 = Process(target=producer, args=(q,))
+#     p1.start()
 
-# print("File created:", filename)
+#     consumer(q)
 
-filename = "sample.txt"
+#     p1.join()
 
-with open(filename, "r") as file:
-    content = file.read()
 
-print(content)
+
+
+# import threading
+
+# counter = 0
+
+# def increment():
+#     global counter
+#     for _ in range(100000):
+#         counter += 1
+
+
+
+# t1 = threading.Thread(target=increment)
+# t2 = threading.Thread(target=increment)
+# t3 = threading.Thread(target=increment)
+# t4 = threading.Thread(target=increment)
+# t5 = threading.Thread(target=increment)
+
+# t1.start()
+
+# t2.start()
+# t3.start()
+# t4.start()
+# t5.start()
+
+
+
+# t1.join()
+# t2.join()
+# t3.join()
+# t4.join()
+# t5.join()
+
+# print("Finl countr value: ", counter)
+
+
+# import threading
+
+# counter = 0
+
+# def increment():
+#     global counter
+#     for _ in range(1000000):
+#         counter += 1
+
+# t1 = threading.Thread(target=increment)
+# t2 = threading.Thread(target=increment)
+# t3 = threading.Thread(target=increment)
+# t4 = threading.Thread(target=increment)
+# t5 = threading.Thread(target=increment)
+
+# t1.start()
+# t2.start()
+# t3.start()
+# t4.start()
+# t5.start()
+
+
+# t1.join()
+# t2.join()
+# t3.join()
+# t4.join()
+# t5.join()
+
+
+# print("Final counter value:", counter)
+
+
+
+
+
+# import threading
+# import time
+
+# counter = 0
+# lock = threading.Lock()
+
+# def increment():
+#     global counter
+#     for _ in range(100000):
+#         lock.acquire()
+#         counter += 1
+#         lock.release()
+
+# start_time = time.time()            
+
+# t1 = threading.Thread(target=increment)
+# t2 = threading.Thread(target=increment)
+# t3 = threading.Thread(target=increment)
+# t4 = threading.Thread(target=increment)
+# t5 = threading.Thread(target=increment)
+
+# t1.start()
+# t2.start()
+# t3.start()
+# t4.start()
+# t5.start()
+
+# t1.join()
+# t2.join()
+# t3.join()
+# t4.join()
+# t5.join()
+
+# end_time = time.time()
+
+# print("Final counter value without Lock:", counter)
+# print("Execution time with Lock:", end_time - start_time)
+
+
+
+from multiprocessing import Process, Value, Lock, Semaphore
+
+def increment(shared_counter, shared_counter2, lock, sem):
+    for _ in range(100000):
+
+        lock.acquire()
+        shared_counter.value += 1
+        lock.release()
+
+        sem.acquire()
+        shared_counter2.value += 1
+        sem.release()
+
+if __name__ == "__main__":
+    counter = Value('i', 0)
+    counter2 = Value('i', 0)
+
+    lock = Lock()
+    semaphore = Semaphore(1)
+
+    p1 = Process(target=increment, args=(counter, counter2, lock, semaphore))
+    p2 = Process(target=increment, args=(counter, counter2, lock, semaphore))
+
+    p1.start()
+    p2.start()
+
+    p1.join()
+    p2.join()
+
+    print("Final counter value with Lock:", counter.value)
+    print("Final counter value with Semaphore:", counter2.value)

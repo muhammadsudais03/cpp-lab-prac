@@ -103,39 +103,160 @@
 
 //     return 0;
 // }
-#include <iostream> 
+// #include <iostream> 
+// using namespace std;
+// int main() {
+// int arr[5] = {5, 3, 8, 1, 2};
+ 
+// int n = 5;	
+// // Find Max and Min
+// int max = arr[0], min = arr[0];
+//  for (int i = 1; i < n; i++) {
+// if (arr[i] > max) 
+// max = arr[i];
+// if (arr[i] < min)
+//  min = arr[i];
+// }
+// cout << "Before Sorting: "; 
+// for (int i = 0; i < n; i++) {
+// cout << arr[i] << " "; cout << endl;
+// }
+// // Bubble Sort
+// for (int i = 0; i < n - 1; i++) {
+// for (int j = 0; j < n - i - 1; j++) {
+//  if (arr[j] > arr[j + 1]) {
+// int temp = arr[j]; 
+// arr[j] = arr[j + 1];
+//  arr[j + 1] = temp;
+// }
+// }
+ 
+// }
+// cout << "After Sorting: "; 
+// for (int i = 0; i < n; i++){
+// cout << arr[i] << " "; cout << endl;
+// }
+// cout << "Maximum: " << max << endl; cout << "Minimum: " << min << endl; 
+// return 0;
+// }
+
+
+// #include <iostream>
+// using namespace std;
+
+// struct Student {
+//     string name;
+//     int roll;
+//     float gpa;
+// };
+
+// int main() {
+//     Student s;
+
+//     cout << "Enter student name: ";
+//     cin >> s.name;
+
+//     cout << "Enter roll number: ";
+//     cin >> s.roll;
+
+//     cout << "Enter GPA: ";
+//     cin >> s.gpa;
+
+//     cout << "\nStudent Information\n";
+//     cout << "Name: " << s.name << endl;
+//     cout << "Roll: " << s.roll << endl;
+//     cout << "GPA: " << s.gpa << endl;
+
+//     return 0;
+// }
+
+
+
+// #include <iostream>
+// using namespace std;
+
+// struct Laptop {
+//     string brand;
+//     int ram;
+//     float price;
+// };
+
+// int main() {
+//     Laptop l;
+
+//     cout << "Enter laptop brand: ";
+//     cin >> l.brand;
+
+//     cout << "Enter RAM in GB: ";
+//     cin >> l.ram;
+
+//     cout << "Enter laptop price: ";
+//     cin >> l.price;
+
+//     cout << "\nLaptop Specifications\n";
+//     cout << "Brand: " << l.brand << endl;
+//     cout << "RAM: " << l.ram << " GB" << endl;
+//     cout << "Price: " << l.price << endl;
+
+//     return 0;
+// }
+
+
+// #include <iostream>
+// using namespace std;
+
+// struct Rectangle {
+//     float length;
+//     float width;
+// };
+
+// int main() {
+//     Rectangle r;
+
+//     cout << "Enter length: ";
+//     cin >> r.length;
+
+//     cout << "Enter width: ";
+//     cin >> r.width;
+
+//     float area = r.length * r.width;
+//     float perimeter = 2 * (r.length + r.width);
+
+//     cout << "Area: " << area << endl;
+//     cout << "Perimeter: " << perimeter << endl;
+
+//     return 0;
+// }
+
+
+
+#include <iostream>
 using namespace std;
+
+struct Student {
+    string name;
+    int roll;
+    float gpa;
+};
+
 int main() {
-int arr[5] = {5, 3, 8, 1, 2};
- 
-int n = 5;	
-// Find Max and Min
-int max = arr[0], min = arr[0];
- for (int i = 1; i < n; i++) {
-if (arr[i] > max) 
-max = arr[i];
-if (arr[i] < min)
- min = arr[i];
-}
-cout << "Before Sorting: "; 
-for (int i = 0; i < n; i++) {
-cout << arr[i] << " "; cout << endl;
-}
-// Bubble Sort
-for (int i = 0; i < n - 1; i++) {
-for (int j = 0; j < n - i - 1; j++) {
- if (arr[j] > arr[j + 1]) {
-int temp = arr[j]; 
-arr[j] = arr[j + 1];
- arr[j + 1] = temp;
-}
-}
- 
-}
-cout << "After Sorting: "; 
-for (int i = 0; i < n; i++){
-cout << arr[i] << " "; cout << endl;
-}
-cout << "Maximum: " << max << endl; cout << "Minimum: " << min << endl; 
-return 0;
+    Student s1, s2;
+
+    cout << "Enter first student name, roll and GPA: ";
+    cin >> s1.name >> s1.roll >> s1.gpa;
+
+    cout << "Enter second student name, roll and GPA: ";
+    cin >> s2.name >> s2.roll >> s2.gpa;
+
+    if (s1.gpa > s2.gpa) {
+        cout << s1.name << " has higher GPA";
+    }
+    else if (s2.gpa > s1.gpa) {
+        cout << s2.name << " has higher GPA";
+    }
+    else {
+        cout << "Both students have equal GPA";
+    }
+
+    return 0;
 }
